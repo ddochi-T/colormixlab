@@ -198,12 +198,6 @@ function useSixtyFourChips() {
   }, []);
 }
 
-// ---- 추천 조합 계산 ----
-function colorDistanceRGB(a: { r: number; g: number; b: number }, b: { r: number; g: number; b: number }): number {
-  const dr = a.r - b.r, dg = a.g - b.g, db = a.b - b.b;
-  return Math.sqrt(dr * dr + dg * dg + db * db);
-}
-
 // 최대 방울 수 내에서(기본 8) 비음수 정수 조합을 모두 탐색하여 목표색과의 거리가 최소인 상위 K개 레시피 반환
 function findBestRecipes(targetRgb: { r: number; g: number; b: number }, maxDrops = 8, topK = 3) {
   const keys: ColorKey[] = ["red", "yellow", "blue", "white", "black"];
